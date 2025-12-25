@@ -5,6 +5,7 @@ import {
   getComplexityTool, 
   getSecurityIssuesTool 
 } from './analysis.js';
+import { discoveryTools } from './discovery.js';
 
 export interface UnifiedTool {
   name: string;
@@ -23,10 +24,13 @@ export interface ToolArguments {
 }
 
 export const toolRegistry: UnifiedTool[] = [
+  // Analysis tools
   analyzeCodebaseTool,
   searchCodeTool,
   getComplexityTool,
   getSecurityIssuesTool,
+  // Discovery tools
+  ...discoveryTools,
 ];
 
 export function getToolDefinitions() {
