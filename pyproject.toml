@@ -75,6 +75,9 @@ monitoring = [
 cli = [
     "rich>=13.0.0",
 ]
+discovery = [
+    "aiohttp>=3.9.0",
+]
 dev = [
     "pytest>=7.0",
     "pytest-asyncio>=0.21",

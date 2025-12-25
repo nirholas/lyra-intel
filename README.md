@@ -150,6 +150,16 @@ Lyra Intel includes 70+ specialized components organized by capability:
 - **Documentation Generator** - Auto-generate API docs and changelogs
 - **Workflow Engine** - Define and execute multi-step analysis pipelines
 
+### 🔍 Auto-Discovery Pipeline (NEW)
+
+- **GitHub Scanner** - Automatically discover new MCP crypto tools from GitHub
+- **AI Tool Analyzer** - Extract tool definitions using AI/pattern matching
+- **Security Scanner** - Scan discovered tools for vulnerabilities
+- **Registry Submitter** - Submit approved tools to the Lyra Registry
+- **Daily Automation** - GitHub Actions workflow for continuous discovery
+
+[See Discovery Documentation →](docs/DISCOVERY.md)
+
 </details>
 
 ## 📚 Complete Documentation
@@ -157,6 +167,7 @@ Lyra Intel includes 70+ specialized components organized by capability:
 Lyra Intel includes comprehensive documentation covering every aspect of the platform:
 
 ### Core Documentation
+
 
 - **[📖 FEATURES.md](docs/FEATURES.md)** - Detailed feature documentation with code examples for:
   - Semantic Search (ML-powered code search)
