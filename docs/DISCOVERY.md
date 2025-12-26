@@ -41,7 +41,7 @@ python -m src.discovery.cli stats
 
 ### MCP Tools
 
-The discovery module exposes MCP tools for AI-driven discovery:
+The discovery module exposes MCP tools for AI-driven discovery. These tools are available when using the Lyra Intel MCP server with Claude or other LLMs.
 
 | Tool | Description |
 |------|-------------|
@@ -50,6 +50,44 @@ The discovery module exposes MCP tools for AI-driven discovery:
 | `discovery-submit-tool` | Submit validated tools to registry |
 | `discovery-run-pipeline` | Run complete discovery pipeline |
 | `discovery-get-stats` | Get discovery statistics |
+
+#### Example MCP Usage
+
+With Claude or another LLM connected to the Lyra Intel MCP server:
+
+```
+# Natural language examples
+"Scan GitHub for new MCP crypto tools from the last 7 days"
+"Analyze the repository at github.com/owner/mcp-wallet for tools"
+"Run the complete discovery pipeline and show me what you found"
+"Submit the tools from that repo to the registry (dry run first)"
+```
+
+#### Tool Parameters
+
+**discovery-scan-github:**
+- `daysBack` (number, default: 7) - How many days back to search
+- `minStars` (number, default: 0) - Minimum stars required
+- `queries` (string[]) - Custom search queries
+- `maxResults` (number, default: 50) - Maximum repos to return
+
+**discovery-analyze-repo:**
+- `repoUrl` (string, required) - GitHub repository URL
+- `checkSecurity` (boolean, default: true) - Run security analysis
+
+**discovery-submit-tool:**
+- `repoUrl` (string, required) - GitHub repository URL
+- `dryRun` (boolean, default: true) - Simulate without submitting
+- `minQualityScore` (number, default: 50) - Quality threshold
+- `minSecurityScore` (number, default: 70) - Security threshold
+
+**discovery-run-pipeline:**
+- `daysBack` (number, default: 7) - Days to search back
+- `submit` (boolean, default: false) - Submit to registry
+- `dryRun` (boolean, default: true) - Simulate submission
+- `maxRepos` (number, default: 20) - Max repos to process
+
+See [MCP Server README](../mcp-server/README.md) for full MCP integration documentation.
 
 ### Python API
 

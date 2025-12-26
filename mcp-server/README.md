@@ -8,6 +8,7 @@ The Lyra Intel MCP (Model Context Protocol) server enables large language models
 - **🔎 Semantic Search** - ML-powered code search to find relevant implementations
 - **📊 Complexity Metrics** - Get cyclomatic, cognitive, and Halstead complexity scores
 - **🛡️ Security Scanning** - Detect vulnerabilities, secrets, and compliance issues
+- **🔬 Auto-Discovery** - Scan GitHub for new MCP crypto tools and submit to registry
 - **⏳ Streaming Progress** - Long-running operations stream progress updates to Claude
 
 ## Installation
@@ -59,9 +60,13 @@ npm start
 "Analyze my project at /path/to/project for security issues"
 "Search for authentication patterns in the codebase"
 "Check complexity of the auth module"
+"Scan GitHub for new MCP crypto tools from the last 7 days"
+"Analyze the repo at github.com/owner/project for MCP tools"
 ```
 
-### Tools Available
+## Tools Available
+
+### Analysis Tools
 
 #### analyze-codebase
 Comprehensive codebase analysis with AST parsing, dependency graphs, and metrics.
@@ -89,6 +94,73 @@ Scan for security vulnerabilities.
 
 ```
 Find security issues in critical severity or higher
+```
+
+### Discovery Tools
+
+#### discovery-scan-github
+Scan GitHub for new MCP crypto tool repositories.
+
+```
+Scan GitHub for MCP crypto repositories from the last 7 days with minimum 5 stars
+```
+
+**Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `daysBack` | number | 7 | How many days back to search |
+| `minStars` | number | 0 | Minimum stars required |
+| `queries` | string[] | - | Custom search queries |
+| `maxResults` | number | 50 | Maximum repos to return |
+
+#### discovery-analyze-repo
+Analyze a GitHub repository to extract MCP tool definitions.
+
+```
+Analyze https://github.com/owner/mcp-crypto-tools for MCP tools
+```
+
+**Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `repoUrl` | string | required | GitHub repository URL |
+| `checkSecurity` | boolean | true | Run security analysis |
+
+#### discovery-submit-tool
+Submit validated tools to the Lyra Registry.
+
+```
+Submit tools from github.com/owner/repo to the registry (dry run)
+```
+
+**Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `repoUrl` | string | required | GitHub repository URL |
+| `dryRun` | boolean | true | Simulate without submitting |
+| `minQualityScore` | number | 50 | Minimum quality threshold |
+| `minSecurityScore` | number | 70 | Minimum security threshold |
+
+#### discovery-run-pipeline
+Run the complete discovery pipeline.
+
+```
+Run the full discovery pipeline for the last 3 days and submit approved tools
+```
+
+**Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `daysBack` | number | 7 | Days to search back |
+| `submit` | boolean | false | Submit to registry |
+| `dryRun` | boolean | true | Simulate submission |
+| `maxRepos` | number | 20 | Max repos to process |
+
+#### discovery-get-stats
+Get discovery module statistics.
+
+```
+Show discovery statistics and recent runs
 ```
 
 ## Integration with API
