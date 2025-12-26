@@ -318,6 +318,54 @@ Real teams use Lyra Intel for:
 
 ### 🔍 Code Review
 **"Reviews are taking too long - 30 min per PR"**
+
+[See more use cases →](docs/USE_CASES.md)
+
+## 🤖 MCP Integration (Claude & LLMs)
+
+Use Lyra Intel directly from Claude, Claude Code, or any MCP-compatible LLM.
+
+### Quick Setup
+
+```bash
+# Claude Code - one command
+npx lyra-intel-mcp
+
+# Claude Desktop - add to config
+{
+  "mcpServers": {
+    "lyra-intel": {
+      "command": "npx",
+      "args": ["-y", "lyra-intel-mcp"]
+    }
+  }
+}
+```
+
+### Available MCP Tools
+
+| Tool | Description |
+|------|-------------|
+| `analyze-codebase` | Comprehensive code analysis with AST, dependencies, metrics |
+| `search-code` | ML-powered semantic code search |
+| `get-complexity` | Cyclomatic, cognitive, and Halstead complexity |
+| `get-security-issues` | Security vulnerabilities, secrets, compliance |
+| `discovery-scan-github` | Find new MCP crypto tools on GitHub |
+| `discovery-analyze-repo` | Extract MCP tool definitions from repos |
+| `discovery-run-pipeline` | Full discovery + analysis + submission |
+
+### Example Prompts
+
+```
+"Analyze my project at ~/code/myapp for security issues"
+"Search for authentication patterns in the codebase"
+"Scan GitHub for new MCP crypto tools from the last 7 days"
+"Run the discovery pipeline and submit approved tools"
+```
+
+[See full MCP documentation →](mcp-server/README.md)
+
+## 🏛️ Architecture
 - [AI-Powered Code Review](docs/USE_CASES.md#use-case-4-code-review-assistance) - Automated insights in 30 seconds
 - Security analysis
 - Complexity warnings
