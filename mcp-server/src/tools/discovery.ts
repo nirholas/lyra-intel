@@ -10,8 +10,7 @@
 
 import { z } from 'zod';
 import { UnifiedTool } from './registry.js';
-import { spawn, execSync } from 'child_process';
-import { promisify } from 'util';
+import { spawn } from 'child_process';
 
 // Schemas for discovery tools
 
@@ -354,7 +353,7 @@ export const discoveryGetStatsTool: UnifiedTool = {
     description: "Get discovery module statistics",
   },
   category: 'discovery',
-  execute: async (args, onProgress) => {
+  execute: async (_args, onProgress) => {
     try {
       onProgress?.(`📊 Fetching discovery statistics...`);
       
