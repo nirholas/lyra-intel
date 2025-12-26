@@ -19,7 +19,7 @@ console = Console()
 
 
 @click.group()
-@click.version_option(version="1.0.0")
+@click.version_option(version="0.1.0")
 def cli():
     """Lyra Intel - AI-Powered Code Analysis Platform"""
     pass
