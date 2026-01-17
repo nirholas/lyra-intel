@@ -32,7 +32,7 @@ export const analyzeCodebaseTool: UnifiedTool = {
   },
   category: 'analysis',
   execute: async (args, onProgress) => {
-    const { path, depth, focusAreas } = args;
+    const { path, depth, focusAreas } = args as z.infer<typeof analyzeCodebaseSchema>;
     
     try {
       onProgress?.(`🔍 Starting ${depth} analysis of ${path}...`);
@@ -66,14 +66,14 @@ export const searchCodeTool: UnifiedTool = {
   },
   category: 'search',
   execute: async (args, onProgress) => {
-    const { query, filePattern, limit } = args;
+    const { query, limit } = args as z.infer<typeof searchCodeSchema>;
     
     try {
       onProgress?.(`🔎 Searching for: "${query}"`);
       onProgress?.(`🧠 Computing semantic embeddings...`);
       onProgress?.(`📍 Finding matching code snippets (limit: ${limit})...`);
       
-      return `Found ${Math.floor(Math.random() * limit) + 1} results for "${query}". Connect to Lyra Intel API for detailed matches.`;
+      return `Found ${Math.floor(Math.random() * (limit || 10)) + 1} results for "${query}". Connect to Lyra Intel API for detailed matches.`;
     } catch (error) {
       throw new Error(`Search failed: ${error instanceof Error ? error.message : String(error)}`);
     }
@@ -89,7 +89,7 @@ export const getComplexityTool: UnifiedTool = {
   },
   category: 'metrics',
   execute: async (args, onProgress) => {
-    const { path, threshold } = args;
+    const { path, threshold } = args as z.infer<typeof getComplexitySchema>;
     
     try {
       onProgress?.(`📈 Analyzing complexity of ${path}...`);
@@ -112,7 +112,7 @@ export const getSecurityIssuesTool: UnifiedTool = {
   },
   category: 'security',
   execute: async (args, onProgress) => {
-    const { path, severity } = args;
+    const { path, severity } = args as z.infer<typeof getSecurityIssuesSchema>;
     
     try {
       onProgress?.(`🛡️ Scanning ${path} for security issues...`);

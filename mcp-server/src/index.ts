@@ -8,8 +8,6 @@ import {
   ListPromptsRequestSchema,
   GetPromptRequestSchema,
   CallToolRequest,
-  ListToolsRequest,
-  ListPromptsRequest,
   GetPromptRequest,
   Tool,
   Prompt,
@@ -96,11 +94,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest)
         {
           type: "text",
           text: `Error: ${errorMessage}`,
-          isError: true,
         },
       ],
       isError: true,
-    } as CallToolResult;
+    } as unknown as CallToolResult;
   }
 });
 
@@ -111,7 +108,11 @@ server.setRequestHandler(ListPromptsRequestSchema, async () => {
     prompts: prompts.map(prompt => ({
       name: prompt.name,
       description: prompt.description,
-      arguments: prompt.arguments || [],
+      arguments: Object.entries(prompt.arguments || {}).map(([name, value]) => ({
+        name,
+        description: String(value) || '',
+        required: false,
+      })),
     })) as Prompt[],
   };
 });

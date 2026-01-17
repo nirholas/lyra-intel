@@ -6,6 +6,7 @@ import {
   getSecurityIssuesTool 
 } from './analysis.js';
 import { discoveryTools } from './discovery.js';
+import { enhancedTools } from './enhanced.js';
 
 export interface UnifiedTool {
   name: string;
@@ -31,6 +32,8 @@ export const toolRegistry: UnifiedTool[] = [
   getSecurityIssuesTool,
   // Discovery tools
   ...discoveryTools,
+  // Enhanced tools (diff, docs, forensics)
+  ...enhancedTools,
 ];
 
 export function getToolDefinitions() {
@@ -132,6 +135,6 @@ function getRequiredFields(schema: z.ZodSchema): string[] {
   return required;
 }
 
-function extractPromptArguments(schema: z.ZodSchema): Record<string, unknown> {
+function extractPromptArguments(_schema: z.ZodSchema): Record<string, unknown> {
   return {};
 }

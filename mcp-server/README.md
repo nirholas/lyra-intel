@@ -96,6 +96,84 @@ Scan for security vulnerabilities.
 Find security issues in critical severity or higher
 ```
 
+### Enhanced Tools
+
+#### diff-analyze
+Analyze git diffs between commits/branches to understand changes, impact, and risk.
+
+```
+Analyze the diff between main and feature-branch in my project
+Show me what changed in the last commit and its risk level
+```
+
+**Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `path` | string | required | Path to the git repository |
+| `sourceRef` | string | HEAD~1 | Source git reference (commit, branch, tag) |
+| `targetRef` | string | HEAD | Target git reference (commit, branch, tag) |
+| `includeImpact` | boolean | true | Include impact analysis (affected tests, risk score) |
+| `maxDepth` | number | 3 | Maximum depth for impact propagation analysis |
+| `focusFiles` | string[] | - | Specific files/patterns to focus on |
+
+**Returns:**
+- Files changed with additions/deletions
+- Semantic changes (functions, classes added/removed)
+- Risk score and risk level (low/medium/high/critical)
+- Impacted areas (Security, API, Data Layer, etc.)
+- Actionable recommendations
+
+#### generate-docs
+Auto-generate documentation from code analysis.
+
+```
+Generate API documentation for my project in markdown format
+Create a README for /path/to/codebase
+Generate architecture docs for my Python project
+```
+
+**Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `path` | string | required | Path to the codebase to document |
+| `outputFormat` | enum | markdown | Output format: markdown, html, json |
+| `docType` | enum | api | Type: api, readme, architecture, all |
+| `includeExamples` | boolean | true | Include code examples |
+| `includeToc` | boolean | true | Include table of contents |
+| `projectName` | string | - | Project name for header |
+
+**Returns:**
+- Generated documentation in requested format
+- Sections breakdown
+- Statistics (files scanned, word count)
+
+#### forensic-scan
+Deep analysis to find dead code, tech debt, and orphaned documentation.
+
+```
+Scan my project for dead code and unused functions
+Find technical debt in the codebase
+Run a full forensic analysis with git history
+```
+
+**Parameters:**
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `path` | string | required | Path to the repository |
+| `scanType` | enum | full | Type: dead-code, tech-debt, orphans, full |
+| `includeGitHistory` | boolean | true | Include git history analysis |
+| `minConfidence` | number | 0.7 | Minimum confidence threshold (0.0-1.0) |
+| `excludePatterns` | string[] | - | Patterns to exclude from scan |
+| `maxFileSize` | number | 10 | Maximum file size in MB |
+
+**Returns:**
+- Dead code items with confidence scores
+- Technical debt (TODOs, FIXMEs, large files, deep nesting)
+- Orphaned documentation
+- Git stale file analysis
+- Overall health score (0-100)
+- Prioritized recommendations
+
 ### Discovery Tools
 
 #### discovery-scan-github
