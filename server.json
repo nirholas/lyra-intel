@@ -1,0 +1,41 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.nirholas/repo-intel",
+  "title": "Repository Intelligence",
+  "description": "Analyze repos of any size - security scanning code analysis 70+ components enterprise monorepo support",
+  "version": "1.0.0",
+  "keywords": [
+    "repository",
+    "analysis",
+    "intelligence",
+    "security",
+    "scanning",
+    "code",
+    "audit",
+    "monorepo",
+    "enterprise",
+    "components",
+    "python",
+    "automation",
+    "ci-cd",
+    "mcp",
+    "claude",
+    "ai",
+    "llm",
+    "devops"
+  ],
+  "repository": {
+    "url": "https://github.com/nirholas/lyra-intel",
+    "source": "github"
+  },
+  "license": "MIT",
+  "packages": [
+    {
+      "registryType": "source",
+      "url": "https://github.com/nirholas/lyra-intel",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
