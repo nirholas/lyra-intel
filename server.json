@@ -5,5 +5,5 @@
   "description": "Analyze repos of any size - security scanning code analysis monorepo support",
   "keywords": ["repository", "analysis", "security", "scanning", "code-review"],
   "repository": {"url": "https://github.com/nirholas/lyra-intel", "source": "github"},
-  "packages": [{"registryType": "source", "identifier": "https://github.com/nirholas/lyra-intel"}]
+  "packages": [{"registryType": "source", "identifier": "https://github.com/nirholas/lyra-intel", "transport": {"type": "stdio"}}]
 }
