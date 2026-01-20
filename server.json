@@ -1,6 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.nirholas/repo-intel",
+  "version": "1.0.0",
   "title": "Repository Intelligence",
   "description": "Analyze repos of any size - security scanning code analysis monorepo support",
   "keywords": ["repository", "analysis", "security", "scanning", "code-review"],
