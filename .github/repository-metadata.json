@@ -1,0 +1,14 @@
+{
+    "name": "lyra-intel",
+    "description": "Lyra Intel is an intelligence platform designed to analyze repositories of any size - from small projects to enterprise monorepos with millions of lines of code. With 70+ components, it provides end-to-end analysis, security scanning, AI integration, and more. ",
+    "version": "1.0.0",
+    "publisher": "nirholas",
+    "repository": "https://github.com/nirholas/lyra-intel",
+    "language": "Python",
+    "topics": [
+        "nirholas",
+        "lyra",
+        "intel",
+        "open-source"
+    ]
+}

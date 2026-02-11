@@ -348,3 +348,7 @@ Contributors will be:
 
 Thank you for contributing to Lyra Intel! 
 - contact [nich on Github](github.com/nirholas) | [nich on X](x.com/nichxbt)
+
+## Code of Conduct
+
+Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
