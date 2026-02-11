@@ -1,6 +1,6 @@
 # Lyra Intel
   
-<div align="center">
+<div align="center"> 
 
 **Complete Intelligence Infrastructure Engine for Massive-Scale Codebase Analysis** 
 
