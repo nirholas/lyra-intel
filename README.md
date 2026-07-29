@@ -630,7 +630,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**Made with❤️by [nich](https://github.com/nirholas) | [Follow me on X.com](x.com/nichxbt)**
+**Made with❤️by [nich](https://github.com/nirholas) | [Follow me on X.com](https://x.com/nichxbt)**
 <details>
 <summary>.</summary>
 # ERC-8004 Keywords & SEO Terms
