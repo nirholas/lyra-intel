@@ -17,8 +17,7 @@
   "version": "1.0.0",
   "links": {
     "homepage": "https://github.com/nirholas/lyra-intel",
-    "bugs": "https://github.com/nirholas/lyra-intel/issues",
-    "pypi": "https://pypi.org/project/lyra-intel/"
+    "bugs": "https://github.com/nirholas/lyra-intel/issues"
   },
   "icons": [
     {
@@ -26,23 +25,10 @@
       "type": "svg"
     }
   ],
-  "packages": [
+  "remotes": [
     {
-      "registryType": "pypi",
-      "identifier": "lyra-intel",
-      "version": "1.0.0",
-      "runtimeHint": "uvx",
-      "transport": {
-        "type": "stdio"
-      },
-      "environmentVariables": [
-        {
-          "name": "GITHUB_TOKEN",
-          "description": "GitHub token for repo access",
-          "required": false,
-          "secret": true
-        }
-      ]
+      "type": "streamable-http",
+      "url": "https://modelcontextprotocol.name/mcp/lyra-intel"
     }
   ],
   "_meta": {

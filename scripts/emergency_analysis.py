@@ -185,8 +185,8 @@ def generate_recommendation(repo_path):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python emergency_analysis.py /path/to/repo [base_branch] [compare_branch]")
-        print("Example: python emergency_analysis.py ../my-repo main feature-branch")
+        print("Usage: python scripts/emergency_analysis.py /path/to/repo [base_branch] [compare_branch]")
+        print("Example: python scripts/emergency_analysis.py ../my-repo main feature-branch")
         sys.exit(1)
     
     repo_path = sys.argv[1]

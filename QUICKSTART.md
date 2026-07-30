@@ -66,7 +66,7 @@ Detects:
 Analyze differences between branches:
 
 ```bash
-python emergency_analysis.py /path/to/repo main feature-branch
+python scripts/emergency_analysis.py /path/to/repo main feature-branch
 ```
 
 Shows:
@@ -80,7 +80,7 @@ Shows:
 Launch the interactive dashboard:
 
 ```bash
-python launch_dashboard.py
+python scripts/launch_dashboard.py
 ```
 
 Then visit `http://localhost:8080` to explore:
@@ -174,7 +174,7 @@ python --version
 ### Permission Errors
 Make sure scripts are executable:
 ```bash
-chmod +x cli.py emergency_analysis.py
+chmod +x cli.py scripts/emergency_analysis.py
 ```
 
 ## Getting Help

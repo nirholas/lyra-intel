@@ -100,6 +100,11 @@ class SSOProvider(ABC):
 
     def validate_session(self, session_id: str) -> Optional[SSOSession]:
         session = self.sessions.get(session_id)
+        if session and session.is_valid():
+            return session
+        return None
+
+
 class OIDCProvider(SSOProvider):
     """Full OAuth 2.0 / OIDC implementation."""
     
@@ -144,6 +149,54 @@ class OIDCProvider(SSOProvider):
             tokens = token_response.json()
             session.access_token = tokens.get("access_token", "")
             session.refresh_token = tokens.get("refresh_token", "")
+
+            session.user = self.get_user_info(session)
+            session.status = AuthStatus.SUCCESS
+            session.expires_at = datetime.utcnow() + timedelta(minutes=self.config.session_timeout_minutes)
+
+        except Exception as e:
+            logger.error(f"OIDC callback error: {e}")
+            session.status = AuthStatus.FAILED
+
+        return session
+
+    def get_user_info(self, session: SSOSession) -> SSOUser:
+        """Fetch user info from the OIDC userinfo endpoint."""
+        try:
+            userinfo_endpoint = f"{self.config.issuer_url.rstrip('/')}/userinfo"
+            response = requests.get(
+                userinfo_endpoint,
+                headers={"Authorization": f"Bearer {session.access_token}"},
+                timeout=10,
+            )
+
+            if response.status_code == 200:
+                data = response.json()
+                return SSOUser(
+                    external_id=data.get("sub", ""),
+                    email=data.get("email", ""),
+                    username=data.get("preferred_username", data.get("email", "").split("@")[0]),
+                    first_name=data.get("given_name", ""),
+                    last_name=data.get("family_name", ""),
+                    display_name=data.get("name", ""),
+                    groups=data.get("groups", []),
+                    roles=data.get("roles", []),
+                    provider=self.config.provider_name,
+                )
+            else:
+                logger.warning(f"Userinfo fetch failed: {response.text}")
+
+        except Exception as e:
+            logger.error(f"Failed to fetch user info: {e}")
+
+        # Fallback
+        return SSOUser(
+            external_id=f"user_{secrets.token_hex(8)}",
+            email="unknown@example.com",
+            provider=self.config.provider_name,
+        )
+
+
 class SAMLProvider(SSOProvider):
     """SAML 2.0 implementation for enterprise SSO."""
     
@@ -391,67 +444,8 @@ class LDAPProvider:
     def close(self):
         """Close connection."""
         if self._connection:
-            self._connection.unbind()       headers={"Authorization": f"Bearer {session.access_token}"},
-                timeout=10,
-            )
-            
-            if response.status_code == 200:
-                data = response.json()
-                return SSOUser(
-                    external_id=data.get("sub", ""),
-                    email=data.get("email", ""),
-                    username=data.get("preferred_username", data.get("email", "").split("@")[0]),
-                    first_name=data.get("given_name", ""),
-                    last_name=data.get("family_name", ""),
-                    display_name=data.get("name", ""),
-                    groups=data.get("groups", []),
-                    roles=data.get("roles", []),
-                    provider=self.config.provider_name,
-                )
-            else:
-                logger.warning(f"Userinfo fetch failed: {response.text}")
-                
-        except Exception as e:
-            logger.error(f"Failed to fetch user info: {e}")
-        
-        # Fallback
-        return SSOUser(
-            external_id=f"user_{secrets.token_hex(8)}",
-            email="unknown@example.com",
-            provider=self.config.provider_name,
-        )eturn session
-
-    def get_user_info(self, session: SSOSession) -> SSOUser:
-        return SSOUser(
-            external_id=f"user_{secrets.token_hex(8)}",
-            email="user@example.com",
-            username="user",
-            display_name="Test User",
-            provider=self.config.provider_name,
-        )
-
-
-class SAMLProvider(SSOProvider):
-    def get_authorization_url(self, redirect_uri: str = "") -> tuple[str, str]:
-        session = SSOSession()
-        self.sessions[session.state] = session
-        return f"{self.config.authorization_endpoint}?RelayState={session.state}", session.state
-
-    def handle_callback(self, code: str, state: str, **kwargs: Any) -> SSOSession:
-        session = self.sessions.get(state)
-        if not session:
-            raise ValueError("Invalid state")
-        session.status = AuthStatus.SUCCESS
-        session.expires_at = datetime.utcnow() + timedelta(minutes=self.config.session_timeout_minutes)
-        session.user = self.get_user_info(session)
-        return session
-
-    def get_user_info(self, session: SSOSession) -> SSOUser:
-        return SSOUser(
-            external_id=f"saml_user_{secrets.token_hex(8)}",
-            email="user@example.com",
-            provider=self.config.provider_name,
-        )
+            self._connection.unbind()
+            self._connection = None
 
 
 class SSOManager:

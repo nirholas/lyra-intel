@@ -2,17 +2,19 @@
 
 ## Quick Install
 
+Lyra Intel is not published on PyPI. Install it directly from GitHub:
+
 ```bash
 # Basic installation
-pip install lyra-intel
+pip install git+https://github.com/nirholas/lyra-intel.git
 
 # With all features
-pip install lyra-intel[all]
+pip install "lyra-intel[all] @ git+https://github.com/nirholas/lyra-intel.git"
 
 # Specific feature sets
-pip install lyra-intel[ai]          # AI providers
-pip install lyra-intel[export]       # PDF/Excel export
-pip install lyra-intel[enterprise]   # SSO integration
+pip install "lyra-intel[ai] @ git+https://github.com/nirholas/lyra-intel.git"          # AI providers
+pip install "lyra-intel[export] @ git+https://github.com/nirholas/lyra-intel.git"      # PDF/Excel export
+pip install "lyra-intel[enterprise] @ git+https://github.com/nirholas/lyra-intel.git"  # SSO integration
 ```
 
 ## Development Installation
@@ -25,7 +27,7 @@ cd lyra-intel
 # Install in development mode
 pip install -e ".[all]"
 
-# Install development dependencies
+# Install development dependencies (pytest, black, mypy, ruff)
 pip install -r requirements-dev.txt
 ```
 

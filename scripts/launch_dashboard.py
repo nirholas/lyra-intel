@@ -6,8 +6,8 @@ Lyra Intel - Launch Enhanced Dashboard
 import sys
 from pathlib import Path
 
-# Add src to path
-sys.path.insert(0, str(Path(__file__).parent))
+# Add the repo root to the path so `src` is importable
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.api.enhanced_server import EnhancedAPIServer
 

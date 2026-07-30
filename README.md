@@ -258,7 +258,7 @@ python cli.py analyze /path/to/code --output ./results.json
 cat results.json | jq .  # Pretty print the JSON
 
 # 6. (Optional) Start the web dashboard
-python launch_dashboard.py
+python scripts/launch_dashboard.py
 # Then visit http://localhost:8080
 ```
 
@@ -930,7 +930,6 @@ curl -X POST https://modelcontextprotocol.name/mcp/lyra-intel \
 
 ### Also Available On
 
-- **[SperaxOS](https://speraxos.vercel.app)** — Browse and install from the [MCP marketplace](https://speraxos.vercel.app/community/mcp)
 - **All 27 MCP servers** — See the full catalog at [modelcontextprotocol.name](https://modelcontextprotocol.name)
 
 > Powered by [modelcontextprotocol.name](https://modelcontextprotocol.name) — the open MCP HTTP gateway
