@@ -341,7 +341,7 @@ Yes, multiple formats:
 
 ### How do I contribute?
 
-See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines.
+See [CONTRIBUTING.md](https://github.com/nirholas/lyra-intel/blob/main/CONTRIBUTING.md) for guidelines.
 
 ### Can I add support for new languages?
 

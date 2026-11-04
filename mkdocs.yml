@@ -1,0 +1,44 @@
+site_name: Lyra Intel
+site_description: Intelligence infrastructure engine for codebase analysis
+site_url: https://lyra-intel.modelcontextprotocol.name/
+repo_url: https://github.com/nirholas/lyra-intel
+repo_name: nirholas/lyra-intel
+edit_uri: edit/main/docs/
+docs_dir: docs
+site_dir: site
+exclude_docs: |
+  index.html
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle: {icon: material/brightness-7, name: Dark mode}
+    - scheme: slate
+      toggle: {icon: material/brightness-4, name: Light mode}
+markdown_extensions:
+  - admonition
+  - tables
+  - toc: {permalink: true}
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+nav:
+  - Home: README.md
+  - Getting Started: getting-started.md
+  - Tutorial: TUTORIAL.md
+  - Examples: examples.md
+  - More Examples: EXAMPLES.md
+  - Features: FEATURES.md
+  - Use Cases: USE_CASES.md
+  - Architecture: ARCHITECTURE.md
+  - API: API.md
+  - Discovery: DISCOVERY.md
+  - OpenRouter: openrouter.md
+  - Deployment: DEPLOYMENT.md
+  - Docs Deployment: docs-deployment.md
+  - FAQ: FAQ.md

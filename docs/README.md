@@ -12,8 +12,8 @@ This folder contains all documentation for Lyra Intel. Start with the guides bel
 
 **New to Lyra Intel?** Start here:
 
-1. **[⚡ QUICKSTART (Root)](../QUICKSTART.md)** - 5-minute quick start guide
-2. **[🔧 INSTALL (Root)](../INSTALL.md)** - Complete installation instructions
+1. **[⚡ QUICKSTART (Root)](https://github.com/nirholas/lyra-intel/blob/main/QUICKSTART.md)** - 5-minute quick start guide
+2. **[🔧 INSTALL (Root)](https://github.com/nirholas/lyra-intel/blob/main/INSTALL.md)** - Complete installation instructions
 3. **[📚 TUTORIAL](TUTORIAL.md)** - Step-by-step tutorials for common tasks
 
 ---
@@ -163,7 +163,7 @@ Common questions about:
 ### I want to...
 
 **...get started quickly**
-→ [QUICKSTART](../QUICKSTART.md) → [EXAMPLES.md](EXAMPLES.md)
+→ [QUICKSTART](https://github.com/nirholas/lyra-intel/blob/main/QUICKSTART.md) → [EXAMPLES.md](EXAMPLES.md)
 
 **...understand all features**
 → [FEATURES.md](FEATURES.md) → [ARCHITECTURE.md](ARCHITECTURE.md)
@@ -184,7 +184,7 @@ Common questions about:
 → [FAQ.md](FAQ.md) → [GitHub Issues](https://github.com/nirholas/lyra-intel/issues)
 
 **...contribute code**
-→ [CONTRIBUTING.md](../CONTRIBUTING.md)
+→ [CONTRIBUTING.md](https://github.com/nirholas/lyra-intel/blob/main/CONTRIBUTING.md)
 
 ---
 
@@ -216,7 +216,7 @@ Root directory:
 ### By Role
 
 **👨‍💻 Developer**
-- [Quick Start](../QUICKSTART.md)
+- [Quick Start](https://github.com/nirholas/lyra-intel/blob/main/QUICKSTART.md)
 - [Examples](EXAMPLES.md)
 - [Tutorial](TUTORIAL.md)
 
@@ -271,7 +271,7 @@ Last updated: December 2025
 
 ---
 
-**Ready to get started?** → [Quick Start Guide](../QUICKSTART.md)
+**Ready to get started?** → [Quick Start Guide](https://github.com/nirholas/lyra-intel/blob/main/QUICKSTART.md)
 
 contact [nich on Github](github.com/nirholas) | [nich on X](x.com/nichxbt)
 

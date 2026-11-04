@@ -87,7 +87,7 @@ With Claude or another LLM connected to the Lyra Intel MCP server:
 - `dryRun` (boolean, default: true) - Simulate submission
 - `maxRepos` (number, default: 20) - Max repos to process
 
-See [MCP Server README](../mcp-server/README.md) for full MCP integration documentation.
+See [MCP Server README](https://github.com/nirholas/lyra-intel/blob/main/mcp-server/README.md) for full MCP integration documentation.
 
 ### Python API
 
@@ -331,4 +331,4 @@ async with RegistrySubmitter(config) as submitter:
 
 ## Contributing
 
-See [CONTRIBUTING.md](../CONTRIBUTING.md) for guidelines on contributing to the discovery module.
+See [CONTRIBUTING.md](https://github.com/nirholas/lyra-intel/blob/main/CONTRIBUTING.md) for guidelines on contributing to the discovery module.

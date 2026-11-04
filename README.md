@@ -936,7 +936,9 @@ curl -X POST https://modelcontextprotocol.name/mcp/lyra-intel \
 
 ## Documentation
 
-Full documentation site: **https://nirholas.github.io/lyra-intel/**
+Full documentation site: **https://lyra-intel.modelcontextprotocol.name/** (MkDocs on Cloudflare Pages; build and deploy steps in [docs/docs-deployment.md](docs/docs-deployment.md)).
+
+Hosted REST API: **https://lyra-intel-api.modelcontextprotocol.name** (Google Cloud Run behind a Cloudflare Worker; try `curl https://lyra-intel-api.modelcontextprotocol.name/health`). Endpoints are listed in [docs/API.md](docs/API.md).
 
 - [Getting started](docs/getting-started.md) covers install and first run.
 - [Examples](docs/examples.md) has copy-paste snippets.

@@ -1120,4 +1120,4 @@ Found {len(critical)} critical issues:
 5. Integrate with your existing tools
 6. Share results with your team
 
-For questions or additional use cases, see [README.md](../README.md) or [FAQ.md](FAQ.md).
+For questions or additional use cases, see [README.md](https://github.com/nirholas/lyra-intel/blob/main/README.md) or [FAQ.md](FAQ.md).

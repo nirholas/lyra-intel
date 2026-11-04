@@ -54,3 +54,6 @@ MCP_COMPLETION_SUMMARY.txt
 # Temporary files
 *.tmp
 temp/
+
+# MkDocs build output
+/site/
