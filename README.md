@@ -946,3 +946,13 @@ Hosted REST API: **https://lyra-intel-api.modelcontextprotocol.name** (Google Cl
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=nirholas/lyra-intel&type=Date)](https://www.star-history.com/#nirholas/lyra-intel&Date)
+
+<!-- nirholas:watermark -->
+
+---
+
+<p align="center">
+  Built by <a href="https://github.com/nirholas"><b>nirholas</b></a> · <a href="https://x.com/nichxbt">@nichxbt</a> · <a href="https://github.com/nirholas">github.com/nirholas</a>
+</p>
+
+<!-- /nirholas:watermark -->
