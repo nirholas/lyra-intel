@@ -1,0 +1,1 @@
+{"name":"lyra-intel","version":"0.1.0","description":"Scan, analyze, search and security-check repositories with the Lyra Intel Python CLI.","author":{"name":"nirholas"},"repository":"https://github.com/nirholas/lyra-intel","homepage":"https://lyra-intel.modelcontextprotocol.name","keywords":["code-analysis","security","static-analysis","complexity","cli"]}
